@@ -1,0 +1,73 @@
+<body cz-shortcut-listen="true">
+    
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6"  href="#"><img width="25" height="25" src="../../../assets/img/icono_easy_con_fondo2.png" alt="">Administración Easy</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-3" href="#">Cerrar Sesión</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3 sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active mb-3" aria-current="page" href="#">
+                    <i class="fa-solid fa-city"></i>
+                    Gestión de Empresas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mb-3" href="#">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    Gestión de Planes
+                </a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="nav-link" href="#">
+                    <i class="fa-solid fa-crop-simple"></i>
+                    Administración de Plantillas y Temas
+                </a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="nav-link" href="#">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+              </li>
+            </ul>
+    
+            
+          </div>
+        </nav>
+    
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">[TITULO]</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+              </div>
+            </div>
+          </div>
+          <app-admin-companies></app-admin-companies>
+          <app-admin-plans></app-admin-plans>
+          <app-admin-templates></app-admin-templates>
+          <app-admin-users></app-admin-users>
+
+
+  
+
+        </main>
+      </div>
+    </div>
+    
+    
+    
+    </body>
+
