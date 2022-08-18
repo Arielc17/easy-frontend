@@ -1,7 +1,7 @@
 <form [formGroup]="formularioUser" class="d-flex flex-column align-items-center">
     
     <div class="w-75 m-3">
-       <h2 class="mb-4">Nuevo Usuario</h2>
+       <h2 *ngIf="isLogin == 0" class="mb-4">Nuevo Usuario</h2>
        <div class="form-floating mb-3 ">
        <input formControlName="nombre" type="text" class="form-control rounded-3" id="floatingInput" required="true" name="nombre"  >
        <label for="floatingInput">Nombre</label>
@@ -59,7 +59,7 @@
        <div class="d-flex justify-content-evenly">
 
            <button [disabled]="!isValid()" type="button" class="btn btn-primary" (click)="agregarUsuario()">Agregar Usuario</button>
-           <button type="button" class="btn btn-secondary" (click)="cancelarCambios()">Cancelar</button>
+           <button *ngIf="isLogin == 0" type="button" class="btn btn-secondary" (click)="cancelarCambios()">Cancelar</button>
        </div>
    
  </div>   

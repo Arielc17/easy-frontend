@@ -26,6 +26,13 @@ import { NewTemplateComponent } from './pages/admin/admin-templates/new-template
 import { EditTemplateComponent } from './pages/admin/admin-templates/edit-template/edit-template.component';
 import { EmpresaComponent } from './pages/empresa/empresa.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
+import { BancoImagenesComponent } from './pages/empresa/banco-imagenes/banco-imagenes.component';
+import { AdminPaginasComponent } from './pages/empresa/admin-paginas/admin-paginas.component';
+import { ConfigSitioComponent } from './pages/empresa/config-sitio/config-sitio.component';
+import { ProductosCategoriasComponent } from './pages/empresa/productos-categorias/productos-categorias.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -49,6 +56,10 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     EditTemplateComponent,
     EmpresaComponent,
     ClienteComponent,
+    BancoImagenesComponent,
+    AdminPaginasComponent,
+    ConfigSitioComponent,
+    ProductosCategoriasComponent,
     
   ],
   imports: [
@@ -56,7 +67,9 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

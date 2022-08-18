@@ -12,8 +12,10 @@ export class NewUserComponent implements OnInit {
 
   userNew: any;
   contrasena: string = '';
-  @Input() idUser: string = ''
+  @Input() idUser: string = '';
+  @Input() isLogin: number = 0;
   @Output() visible2 = new EventEmitter<string>();
+  @Output() login = new EventEmitter<any>();
 
   formularioUser = new FormGroup({
     nombre: new FormControl('',[Validators.required]),
@@ -58,8 +60,14 @@ export class NewUserComponent implements OnInit {
     this.usersService.insertUser(this.userNew).subscribe(
       res=>{
         console.log(res)
-        
-        this.visible2.emit('tabla');
+        if (this.isLogin == 1) {
+          console.log('primer is login')
+          this.login.emit(this.userNew)
+        }else{
+
+          this.visible2.emit('tabla');
+        }
+
       },
       error=>{
         console.log(error)
@@ -70,7 +78,12 @@ export class NewUserComponent implements OnInit {
 
   cancelarCambios(){
 
-    this.visible2.emit('tabla');
+    if (this.isLogin == 1) {
+      this.login.emit(0)
+    }else{
+
+      this.visible2.emit('tabla');
+    }
   }
 
   isValid(){

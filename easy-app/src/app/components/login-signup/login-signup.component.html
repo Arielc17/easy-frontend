@@ -15,7 +15,7 @@
         <div class="modal-content rounded-4 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
               <!-- <h5 class="modal-title">Modal title</h5> -->
-              <h1 class="fw-bold mb-0">Para Empresas</h1>
+              <h1 class="fw-bold mb-0">Inicio de Sesión</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
       
@@ -41,8 +41,8 @@
                   </div>
                   <hr class="my-4">
                 
-                <button type="button" class="btn-login btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginClientModal" >Iniciar como cliente</button>
-                    
+               <!-- <button type="button" class="btn-login btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginClientModal" >Iniciar como cliente</button>
+                --> 
               </form>
             </div>
           </div>
@@ -56,12 +56,13 @@
         <div class="modal-content rounded-4 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
               <!-- <h5 class="modal-title">Modal title</h5> -->
-              <h1 class="fw-bold mb-0">Para Empresas</h1>
+              <h1 class="fw-bold mb-0">Registrarse</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
       
             <div class="modal-body p-5 pt-0">
-              <form class="">
+              <app-new-user [isLogin]="1" (login)="primerIngreso($event)" ></app-new-user>
+            <!-- <form class="">
                 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Nombre">
@@ -99,8 +100,10 @@
                   <hr class="my-4">
                 
                   <button type="button" class="btn-sign-up btn btn-warning" data-bs-toggle="modal" data-bs-target="#signUpClientModal">Registrarse como cliente</button>
-                  </div>
-              </form>
+                  
+                
+                </div>
+              </form> -->  
             </div>
           </div>
     </div>

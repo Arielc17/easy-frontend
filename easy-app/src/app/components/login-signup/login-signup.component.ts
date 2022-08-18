@@ -30,6 +30,20 @@ export class LoginSignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  primerIngreso(user : any){
+    if (user == 0) {
+      
+      this.router.navigate(['/**'])
+    }else{
+      
+      console.log('entra a primer ingreso')
+      this.formularioLogin.value.correo = user.correo;
+      this.formularioLogin.value.contrasena = user.contrasena;
+      this.validarCredenciales();
+    }
+
+  }
+
   validarCredenciales(){
     
     console.log('validar aqui', this.formularioLogin.value)

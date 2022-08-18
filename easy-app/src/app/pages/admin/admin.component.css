@@ -41,6 +41,7 @@ body {
     font-weight: 500;
     color: #333;
   }
+
   
   .sidebar .nav-link .feather {
     margin-right: 4px;
@@ -59,7 +60,15 @@ body {
   .sidebar-heading {
     font-size: .75rem;
   }
-  
+
+
+  header{
+    background:   linear-gradient(120deg, #1045A3 0%, #2DAFE9 100%);
+
+    background: linear-gradient(120deg, #206992 0%, #1041A0 100%);
+
+    padding: 0rem !important;
+}
   /*
    * Navbar
    */
