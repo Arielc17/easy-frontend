@@ -1,37 +1,42 @@
 
-        <div class="table-responsive">
-            <h2 >Administración de Plantillas</h2>
-            <div class="info-general w-75">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Plantilla Oscura">
-                    <label for="floatingInput">Título del tema</label>
-                </div><div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Descripción del tema" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Descripción</label>
-                  </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Plantilla Oscura">
-                    <label for="floatingInput">Título del tema</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Plantilla Oscura">
-                    <label for="floatingInput">Título del tema</label>
-                </div>
+          <div class="table-responsive" *ngIf="visible == 'tabla'">
+            
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              
+              <h1 >Administración de Plantillas</h1>
+               
+              </div>
+              
 
+            <button type="button" class="btn btn-sm btn-outline-secondary float-end" (click)="visible = 'nuevo'">Nuevo</button>
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">Titulo de plantilla</th>
+                  <th scope="col">Descripción de plantilla</th>
+                  <th scope="col">Css</th>
+                  <th scope="col">Javascript</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let template of templates; index as i" id="{{template._id}}">
+                  <td>{{i+1}}</td>
+                  <td>{{template.titulo}}</td>
+                  <td>{{template.descripcion}}</td>
+                  <td>/* Codigo CSSS */</td>
+                  <td>// Codigo Javascript </td>
+                  <td>
+                    <div class="btn-group me-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"  (click)="visible = 'editar'; idTemplateParent = template._id;">Editar</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="eliminarPlantilla(template._id);">Eliminar</button>
+                    </div></td>
+                </tr>
                 
-            </div>
-
-            
-            <div
-            class="app-ace-editor w-100 mb-5"
-            #editorCss
-            style="height: 400px;"
-            ></div>
-
-            
-            <div
-            class="app-ace-editor w-100 mb-5"
-            #editorJs
-            style="height: 400px;"
-            ></div>
+              </tbody>
+            </table>
           </div>
+          <app-new-template (visible2)="verPlantillas($event)" *ngIf="visible == 'nuevo'"></app-new-template>
+          <app-edit-template (visible2)="verPlantillas($event)" *ngIf="visible == 'editar'" [idTemplate]="idTemplateParent"></app-edit-template>
+    

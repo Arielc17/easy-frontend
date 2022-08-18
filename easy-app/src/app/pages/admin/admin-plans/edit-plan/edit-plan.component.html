@@ -1,0 +1,38 @@
+<form [formGroup]="formularioPlan" class="d-flex flex-column align-items-center">
+    
+    <div class="w-75 m-3">
+       <h2 class="mb-4">Editar Plan</h2>
+       <div class="form-floating mb-3 ">
+       <input formControlName="nombrePlan" type="text" class="form-control rounded-3" id="floatingInput" required="true" name="nombrePlan"  >
+       <label for="floatingInput">Nombre Plan</label>
+     </div>
+     <div class="form-floating mb-3">
+       <input formControlName="cantidadPaginas" type="text" class="form-control rounded-3" id="floatingInput"  name="cantidadPaginas">
+       <label for="floatingInput">Cantidad de paginas</label>
+     </div>
+     <div class="form-floating mb-3">
+       <input formControlName="cantidadProductos" type="text" class="form-control rounded-3" id="floatingInput" name="cantidadProductos">
+       <label for="floatingInput">Cantidad de productos</label>
+     </div>
+     <div class="form-floating mb-3">
+       <input formControlName="almacenamiento" type="text" class="form-control rounded-3" id="floatingInput" name="almacenamiento">
+       <label for="floatingInput">Almacenamiento</label>
+     </div>
+     <div class="form-floating mb-3">
+       <input formControlName="anchoBanda" type="text" class="form-control rounded-3" id="floatingInput" name="anchoBanda">
+       <label for="floatingInput">Ancho de banda</label>
+     </div>
+     <div class="form-floating mb-3">
+       <input formControlName="precio" type="text" class="form-control rounded-3" id="floatingInput" name="precio">
+       <label for="floatingInput">Precio</label>
+     </div>
+
+       <div class="d-flex justify-content-evenly">
+  
+           <button [disabled]="!isValid()" type="button" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+           <button type="button" class="btn btn-secondary" (click)="cancelarCambios()">Cancelar Cambios</button>
+       </div>
+   
+  </div>   
+  
+  </form>

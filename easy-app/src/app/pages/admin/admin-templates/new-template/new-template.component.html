@@ -1,0 +1,44 @@
+
+        <div class="table-responsive">
+            
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              
+              <h1 >Nueva Plantilla</h1>
+               
+              </div>
+              
+            <div class="info-general w-75">
+                <form [formGroup]="formularioTemplate" class="d-flex flex-column align-items-center">
+    
+                    <div class="w-100 m-3">
+                       <div class="form-floating mb-3 ">
+                       <input formControlName="titulo" type="text" class="form-control rounded-3" id="floatingInput" required="true" name="titulo"  >
+                       <label for="floatingInput">Titulo plantilla</label>
+                     </div>
+                     <div class="form-floating mb-3">
+                       <input formControlName="descripcion" type="text" class="form-control rounded-3" id="floatingInput"  name="descripcion">
+                       <label for="floatingInput">Descripcion</label>
+                     </div>
+
+                     <div class="app-ace-editor w-100 mb-5" #editorCss style="height: 400px;"></div>
+
+            
+                     <div class="app-ace-editor w-100 mb-5" #editorJs style="height: 400px;" ></div>
+                        
+                     
+                
+                       <div class="d-flex justify-content-evenly">
+                  
+                           <button [disabled]="!isValid()" type="button" class="btn btn-primary" (click)="agregarTemplate()">Guardar Cambios</button>
+                           <button type="button" class="btn btn-secondary" (click)="cancelarCambios()">Cancelar Cambios</button>
+                       </div>
+                   
+                  </div>   
+                  
+         
+                  </form>
+                
+            </div>
+
+            
+          </div>

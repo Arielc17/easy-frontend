@@ -1,7 +1,7 @@
 <header class="fixed-top ">
     <div class="container ">
       <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-between">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <a routerLink="home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
           <img width="35" height="35" role="img" src="../../../assets/img/icono_easy_sin_fondo.png" alt="">
         </a>
 
@@ -13,10 +13,11 @@
           </button>
           <div class="collapse navbar-collapse justify-content-center " id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link text-light active" aria-current="page" href="#">Inicio</a>
-              <a class="nav-link text-light" href="#">Mall Online</a>
-              <a class="nav-link text-light" href="#">Tarifas</a>
-              <a class="nav-link text-light" href="#">Documentación</a>
+              <a class="nav-link text-light" aria-current="page" routerLinkActive="opcionActiva" routerLink="/home">Inicio</a>
+              <a class="nav-link text-light" routerLink="/companies">Mall Online</a>
+              <a class="nav-link text-light" routerLink="/planes">Tarifas</a>
+              <a class="nav-link text-light" routerLink="/documentación">Documentación</a>
+              <a class="nav-link text-light" routerLink="/admin">Admin</a>
             </div>
           </div>
         </div>

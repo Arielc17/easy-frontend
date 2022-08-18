@@ -1,8 +1,13 @@
 
-          <div class="table-responsive">
-            <h2 >Gestión de Planes</h2>
+          <div class="table-responsive" *ngIf="visible == 'tabla'">
+            
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              
+              <h1 >Gestión de Planes</h1>
+               
+              </div>
 
-            <button type="button" class="btn btn-sm btn-outline-secondary float-end">Nuevo</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary float-end" (click)="visible = 'nuevo'">Nuevo</button>
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -17,21 +22,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Free</td>
-                  <td>5</td>
-                  <td>10</td>
-                  <td>5GB</td>
-                  <td>5Mb</td>
-                  <td>0</td>
+                <tr *ngFor="let plan of plans; index as i">
+                  <td>{{i+1}}</td>
+                  <td>{{plan.nombrePlan}}</td>
+                  <td>{{plan.cantidadPaginas}}</td>
+                  <td>{{plan.cantidadProductos}}</td>
+                  <td>{{plan.almacenamiento}}</td>
+                  <td>{{plan.anchoBanda}}</td>
+                  <td>{{plan.precio}}</td>
                   <td>
                     <div class="btn-group me-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Eliminar</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"  (click)="visible = 'editar'; idPlanParent = plan._id;">Editar</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="eliminarPlan(plan._id);">Eliminar</button>
                     </div></td>
                 </tr>
                 
               </tbody>
             </table>
           </div>
+          <app-new-plan (visible2)="verPlanes($event)" *ngIf="visible == 'nuevo'"></app-new-plan>
+          <app-edit-plan (visible2)="verPlanes($event)" *ngIf="visible == 'editar'" [idPlan]="idPlanParent"></app-edit-plan>
+    
